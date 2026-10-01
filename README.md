@@ -249,17 +249,19 @@ Session Lifetime	30 minutes
           Members              Chat          Account Settings
 
 🌐 API Endpoints
-Method	Endpoint	Purpose
-GET	/	Login / Home page
-POST	/login	Authenticate user
-POST	/register	Register a new user
-GET	/dashboard	Open user dashboard
-GET	/health	Check application health
-GET	/api/members	Retrieve members
-GET	/api/messages	Retrieve messages
-POST	/api/messages	Send a message
-POST	/change-password	Change user password
-POST	/logout	Logout user
+| Method | Endpoint           | Purpose                  |
+| :----: | :----------------- | :----------------------- |
+|  `GET` | `/`                | Login / Home page        |
+| `POST` | `/login`           | Authenticate user        |
+| `POST` | `/register`        | Register a new user      |
+|  `GET` | `/dashboard`       | Open user dashboard      |
+|  `GET` | `/health`          | Check application health |
+|  `GET` | `/api/members`     | Retrieve members         |
+|  `GET` | `/api/messages`    | Retrieve messages        |
+| `POST` | `/api/messages`    | Send a message           |
+| `POST` | `/change-password` | Change user password     |
+| `POST` | `/logout`          | Logout user              |
+
 
 🎯 Project Objectives
 Build a secure authentication system using Flask.

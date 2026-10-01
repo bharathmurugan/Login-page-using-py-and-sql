@@ -212,7 +212,7 @@ Session Lifetime	30 minutes
 
 📊 Application Workflow
 
-                             ┌─────────────────┐
+                         ┌─────────────────┐
                          │      User       │
                          └────────┬────────┘
                                   │

@@ -1,220 +1,172 @@
-Glassgate Authentication System
-About
+# 🔐 Glassgate Authentication System
 
-Glassgate Authentication System is a secure full-stack authentication web application built with Python Flask and MySQL. It provides user registration, login, session management, password security, account lockout protection, live online presence, member management, and real-time-style chat features through a modern glassmorphism interface.
+A secure and modern authentication web application built using **Python Flask** and **MySQL**, featuring user authentication, session management, password protection, login lockout, online presence, member management, and chat functionality.
 
-The project is designed to demonstrate practical implementation of web authentication, database integration, session security, CSRF protection, password hashing, and responsive UI development.
+---
 
-Features
-🔐 User Registration & Login
-🔑 Secure Password Hashing
-🛡️ CSRF Protection
-🚫 Login Attempt Lockout
-👤 User Session Management
-🟢 Live Online Presence
-💬 User-to-User Chat
-👥 Members List
-📊 User Dashboard
-🔄 Change Password
-🌙 Light/Dark Theme
-📱 Responsive Design
-🗄️ MySQL Database Integration
-❤️ Health Check API
-🚪 Secure Logout
-🎨 Glassmorphism UI
-Tech Stack
-Frontend
-HTML5
-CSS3
-JavaScript
-Responsive Design
-Glassmorphism UI
-Backend
-Python
-Flask
-Werkzeug Security
-Flask Sessions
-Database
-MySQL
-MySQL Connector/Python
-Security
-Password Hashing
-CSRF Protection
-Session Security
-Login Lockout
-HTTPOnly Cookies
-SameSite Cookies
-Project Structure
-Login page/
+## 📌 About the Project
+
+**Glassgate Authentication System** is a full-stack web application developed to demonstrate a practical and secure authentication workflow.
+
+The application provides users with a modern **glassmorphism-based interface** while handling authentication and user data through a Flask backend connected to a MySQL database.
+
+The project focuses on:
+
+- Secure user authentication
+- Password protection
+- Session management
+- CSRF protection
+- Login attempt protection
+- User presence
+- Member management
+- Chat functionality
+- Responsive user interface
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---|---|
+| 🔐 User Login | Secure username and password authentication |
+| 📝 User Registration | Create a new user account |
+| 🔑 Password Security | Password hashing using Werkzeug |
+| 🛡️ CSRF Protection | Protects forms and requests from CSRF attacks |
+| 🚫 Login Lockout | Temporarily locks login after repeated failures |
+| 👤 Session Management | Secure authenticated user sessions |
+| 🟢 Online Presence | Shows currently active users |
+| 👥 Members | Displays registered application users |
+| 💬 Chat | Allows authenticated users to send messages |
+| 📊 Dashboard | Central interface for authenticated users |
+| 🔄 Change Password | Allows users to update their password |
+| 🌙 Theme Toggle | Light/dark interface support |
+| 📱 Responsive UI | Works across different screen sizes |
+| 🗄️ MySQL | Persistent database storage |
+| ❤️ Health Check | Application health monitoring endpoint |
+| 🚪 Logout | Securely terminates the user session |
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+- Responsive Web Design
+- Glassmorphism UI
+
+### Backend
+
+- Python
+- Flask
+- Werkzeug
+- Flask Sessions
+
+### Database
+
+- MySQL
+- MySQL Connector/Python
+
+### Security
+
+- Password Hashing
+- CSRF Protection
+- Session Security
+- Login Attempt Lockout
+- HTTPOnly Cookies
+- SameSite Cookies
+
+---
+
+## 📂 Project Structure
+
+```text
+Glassgate-Authentication-System/
 │
 ├── main.py
 ├── README.md
-└── venv/
-Requirements
-Python 3.10+
+```
+The project is primarily implemented in main.py, including the Flask backend and web interface.
+
+⚙️ Requirements
+
+Before running the project, install:
+
+Python 3.10 or higher
 MySQL Server
 MySQL Workbench (optional)
-Web Browser
-Installation
+Git
+Modern web browser
+
+🚀 Installation
 1. Clone the Repository
 git clone YOUR_GITHUB_REPOSITORY_URL
-cd "Login page"
-2. Create Virtual Environment
-py -m venv venv
-3. Activate Virtual Environment
+
+Navigate into the project:
+
+cd Glassgate-Authentication-System
+2. Create a Virtual Environment
 
 Windows:
 
+py -m venv venv
+3. Activate the Virtual Environment
 venv\Scripts\activate
-4. Install Dependencies
+4. Install Required Packages
 pip install flask mysql-connector-python werkzeug
-5. Configure MySQL
+🗄️ MySQL Configuration
 
-Make sure MySQL Server is running.
+Make sure your MySQL Server is running.
 
-The application uses:
+The application uses the following default configuration:
 
-Host: localhost
-Port: 3306
-User: root
-Database: login_app
+Host      : localhost
+Port      : 3306
+Username  : root
+Database  : login_app
 
-The application can initialize the required database structure when started.
+The application can initialize the required database structure when it starts.
 
-6. Run the Application
+Database Name
+login_app
+▶️ Run the Application
+
+Start the Flask application:
+
 py main.py
 
-Open:
+After the server starts, open:
 
 http://127.0.0.1:5000
-Demo Accounts
+🔑 Demo Login Credentials
+User 1
+Username : bharath
+Password : Bharath@123
+User 2
+Username : admin
+Password : Admin@123
+User 3
+Username : student
+Password : Student@123
 
-The application includes demo users such as:
+For production deployment, replace demo credentials and use environment variables for sensitive configuration.
 
-Username: bharath
-Password: Bharath@123
-Username: admin
-Password: Admin@123
-Username: student
-Password: Student@123
-Database
-
-The project uses MySQL with the database:
-
-login_app
-
-The main user information is stored in the users table.
-
-The chat functionality uses the message storage table created by the application.
-
-Security Features
+🔒 Security Implementation
 Password Hashing
 
-Passwords are stored using secure password hashing rather than storing passwords directly in plain text.
+User passwords are protected using secure password hashing instead of storing passwords directly in plain text.
 
 CSRF Protection
 
-CSRF tokens are used to protect important form and API requests from unauthorized cross-site requests.
+CSRF tokens are used to protect important forms and requests from unauthorized cross-site requests.
 
-Login Lockout
+Login Attempt Protection
 
-Multiple failed login attempts can temporarily lock an account to reduce brute-force login attempts.
+The application limits repeated failed login attempts.
 
-Maximum attempts: 5
-Lock duration: 60 seconds
-Secure Sessions
+Maximum Attempts : 5
+Lock Duration    : 60 seconds
 
-The application uses secure session settings including:
-
-HTTPOnly cookies
-SameSite=Lax
-30-minute session lifetime
-Main Application Flow
-User
-  │
-  ▼
-Registration / Login
-  │
-  ▼
-Flask Backend
-  │
-  ├── Authentication
-  ├── Password Verification
-  ├── CSRF Validation
-  ├── Session Management
-  └── Login Protection
-  │
-  ▼
-MySQL Database
-  │
-  ▼
-Dashboard
-  │
-  ├── Members
-  ├── Online Users
-  ├── Chat
-  └── Account Settings
-API Endpoints
-Method	Endpoint	Purpose
-GET	/	Login/Home page
-POST	/login	Authenticate user
-POST	/register	Create account
-GET	/dashboard	User dashboard
-GET	/health	Application health check
-GET	/api/members	Retrieve members
-GET	/api/messages	Retrieve messages
-POST	/api/messages	Send message
-POST	/change-password	Change password
-POST	/logout	Logout user
-Screens / Modules
-Login
-
-Users can securely sign in using their registered username and password.
-
-Registration
-
-New users can create an account with password validation.
-
-Dashboard
-
-After successful authentication, users can access their account dashboard and application features.
-
-Members
-
-Displays registered members and their online presence.
-
-Chat
-
-Authenticated users can communicate through the application's chat functionality.
-
-Change Password
-
-Users can securely update their account password.
-
-Future Improvements
-Email verification
-Forgot password / password reset
-OTP authentication
-Google/GitHub OAuth
-Admin dashboard
-Role-based access control
-Profile pictures
-Message notifications
-WebSocket-based real-time chat
-Docker deployment
-Cloud database deployment
-Production deployment with Gunicorn/Nginx
-Author
-
-Bharath M
-
-B.Tech Information Technology
-Kongu Engineering College
-
-GitHub: github.com/bharathmurugan
-
-Portfolio: bharath2005.vercel.app
-
-License
-
-This project is created for educational and portfolio purposes.
+This helps reduce brute-force login attempts.
